@@ -35,23 +35,19 @@ function listarAlunos(){
     })
 }
 
-// busca um aluno específico na lista de alunos e o exibe, alem de uma mensagem de sucesso ou não;
+// busca um aluno específico na lista de alunos e retorna esse aluno, alem de exibir uma mensagem de sucesso ou não;
 function buscarAluno(nome){
-    let alunoEncontrado = false;
-    alunosDaEscola.find(function(aluno){
-        // exibe os dados do aluno encontrado
+    let alunoAchado = alunosDaEscola.find(function(aluno){
         if(aluno.nome == nome){
-            alunoEncontrado = true;
-            console.log("ALUNO ENCONTRADO")
-            console.log()
-            for(let dados in aluno){
-                console.log(dados.toUpperCase() + ": ", aluno[dados]);
-            }
+            return aluno;
         }
     });
 
-    // exibe mensagem caso o aluno tenha sido encontrado
-    if(!alunoEncontrado){
-        console.log("ALUNO NÃO ENCONTRADO!")
+    // exibe mensagem caso o aluno tenha sido encontrado ou não;
+    if(alunoAchado != undefined){
+        console.log("ALUNO ENCONTRADO")
+        return alunoAchado;
+    }else{
+        return "ALUNO NÃO ENCONTRADO"
     }
 } 
