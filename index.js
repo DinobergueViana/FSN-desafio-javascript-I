@@ -15,6 +15,14 @@ function adicionarAluno(nome){
     alunosDaEscola.push(aluno);
 }
 
+// exibe o nome da escola;
+function exibirNomeEscola(){
+    console.log("=".repeat(24));
+    console.log(" São Joaquim Tec School");
+    console.log("    Lista de alunos")
+    console.log("=".repeat(24));
+}
+
 // lista todos os alunos;
 function listarAlunos(){
     exibirNomeEscola();
