@@ -64,3 +64,17 @@ function matricularAluno(aluno, curso){
         console.log("ALUNO MATRICULADO COM SUCESSO!");
     }
 }
+
+// aplica falta em um aluno ja existente e que esteja matriculado em curso;
+function aplicarFalta(aluno){
+    if(aluno != undefined){
+        if(aluno.cursos.length > 0){
+            aluno.faltas += 1;
+            console.log("Falta aplicada com sucesso!")
+        }else{
+            console.log("Não foi possivel aplicar falta. O aluno não está matriculado em um curso.")
+        }
+    }
+}
+
+aplicarFalta(buscarAluno("Dino"));
