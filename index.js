@@ -26,11 +26,11 @@ function exibirNomeEscola(){
 // lista todos os alunos;
 function listarAlunos(){
     exibirNomeEscola();
-    for(let i=0; i < alunosDaEscola.length; i++){
-        for(var dado in alunosDaEscola[i]){
-            console.log(dado.toUpperCase() + ": ", alunosDaEscola[i][dado]);
+    alunosDaEscola.forEach(function(aluno){
+        for(var dados in aluno){
+            console.log(dados.toUpperCase() + ": ", aluno[dados]);
         }
         console.log();
         console.log("-".repeat(24));
-    }
+    })
 }
