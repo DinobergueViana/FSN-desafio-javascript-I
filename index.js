@@ -14,3 +14,15 @@ function adicionarAluno(nome){
     console.log("Aluno adcionado com sucesso!")
     alunosDaEscola.push(aluno);
 }
+
+// lista todos os alunos;
+function listarAlunos(){
+    exibirNomeEscola();
+    for(let i=0; i < alunosDaEscola.length; i++){
+        for(var dado in alunosDaEscola[i]){
+            console.log(dado.toUpperCase() + ": ", alunosDaEscola[i][dado]);
+        }
+        console.log();
+        console.log("-".repeat(24));
+    }
+}
