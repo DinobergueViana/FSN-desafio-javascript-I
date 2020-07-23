@@ -8,7 +8,7 @@ function adicionarAluno(nome){
     let aluno = {
         nome: nome,
         notas: [],
-        curso: [],
+        cursos: [],
         faltas: 0
     }
     console.log("Aluno adcionado com sucesso!")
@@ -37,17 +37,30 @@ function listarAlunos(){
 
 // busca um aluno específico na lista de alunos e retorna esse aluno, alem de exibir uma mensagem de sucesso ou não;
 function buscarAluno(nome){
-    let alunoAchado = alunosDaEscola.find(function(aluno){
+    let alunoEncontrado = alunosDaEscola.find(function(aluno){
         if(aluno.nome == nome){
             return aluno;
         }
     });
 
     // exibe mensagem caso o aluno tenha sido encontrado ou não;
-    if(alunoAchado != undefined){
+    if(alunoEncontrado != undefined){
         console.log("ALUNO ENCONTRADO")
-        return alunoAchado;
+        return alunoEncontrado;
     }else{
-        return "ALUNO NÃO ENCONTRADO"
+        console.log("ALUNO NÃO ENCONTRADO");
+        return alunoEncontrado;
     }
 } 
+
+// matricula um aluno em um curso caso esteja cadastrado
+function matricularAluno(aluno, curso){
+    if(aluno != undefined){
+        let cursos = {
+            nomeDoCurso: curso,
+            dataMatricula: new Date
+        }
+        aluno.cursos.push(cursos);
+        console.log("ALUNO MATRICULADO COM SUCESSO!");
+    }
+}
