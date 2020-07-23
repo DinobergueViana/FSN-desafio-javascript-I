@@ -76,5 +76,3 @@ function aplicarFalta(aluno){
         }
     }
 }
-
-aplicarFalta(buscarAluno("Dino"));
