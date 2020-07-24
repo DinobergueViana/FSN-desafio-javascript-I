@@ -75,7 +75,19 @@ function aplicarFalta(aluno){
             aluno.faltas += 1;
             console.log("Falta aplicada com sucesso!")
         }else{
-            console.log("Não foi possivel aplicar falta. O aluno não está matriculado em um curso.")
+            console.log("Não foi possivel aplicar a falta. O aluno não está matriculado em um curso.")
+        }
+    }
+}
+
+// aplica uma nota a um aluno específico
+function aplicarNota(aluno, nota){
+    if(aluno != undefined){
+        if(aluno.cursos.length > 0){
+            aluno.notas.push(nota);
+            console.log("Nota aplicada com sucesso!")
+        }else{
+            console.log("Não foi possivel aplicar a nota. O aluno não está matriculado em um curso.")
         }
     }
 }
