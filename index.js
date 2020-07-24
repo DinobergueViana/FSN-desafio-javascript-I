@@ -5,14 +5,18 @@ const alunosDaEscola=[{nome:"Henrique",notas:[],cursos:[],faltas:5},{nome:"Edson
 
 // adiciona um novo aluno;
 function adicionarAluno(nome){
-    let aluno = {
-        nome: nome,
-        notas: [],
-        cursos: [],
-        faltas: 0
+    if((typeof nome == 'string' && nome != false) && !parseInt(nome) ){
+        let aluno = {
+            nome: nome,
+            notas: [],
+            cursos: [],
+            faltas: 0
+        }
+        alunosDaEscola.push(aluno);
+        console.log("Aluno adcionado com sucesso!");
+    }else{
+        console.log("Desculpe, não foi possível adicionar o aluno.")
     }
-    console.log("Aluno adcionado com sucesso!");
-    alunosDaEscola.push(aluno);
 }
 
 // exibe o nome da escola;
@@ -75,3 +79,5 @@ function aplicarFalta(aluno){
         }
     }
 }
+
+adicionarAluno(" Dino");
