@@ -11,7 +11,7 @@ function adicionarAluno(nome){
         cursos: [],
         faltas: 0
     }
-    console.log("Aluno adcionado com sucesso!")
+    console.log("Aluno adcionado com sucesso!");
     alunosDaEscola.push(aluno);
 }
 
@@ -46,11 +46,10 @@ function buscarAluno(nome){
     // exibe mensagem caso o aluno tenha sido encontrado ou não;
     if(alunoEncontrado != undefined){
         console.log("ALUNO ENCONTRADO")
-        return alunoEncontrado;
     }else{
         console.log("ALUNO NÃO ENCONTRADO");
-        return alunoEncontrado;
     }
+    return alunoEncontrado;
 } 
 
 // matricula um aluno em um curso caso esteja cadastrado
@@ -76,5 +75,3 @@ function aplicarFalta(aluno){
         }
     }
 }
-
-aplicarFalta(buscarAluno("Dino"));
