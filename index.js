@@ -91,3 +91,32 @@ function aplicarNota(aluno, nota){
         }
     }
 }
+
+// verifica se um aluno pode ou não ser aprovado;
+function aprovarAluno(aluno){
+
+    // soma todas as notas e retorna a média do aluno;
+    function calcularMedia(notas){
+        let somaDasNotas = 0;
+        somaDasNotas = notas.reduce(function(acumulador, nota){
+            return acumulador + nota;
+        })
+        return somaDasNotas / notas.length;
+    }
+
+    if(aluno != undefined){
+        let media = 0;
+        if(aluno.cursos.length > 0){
+            media = calcularMedia(aluno.notas);
+
+            if(aluno.faltas < 4 && media >= 7){
+                console.log("ALUNO APROVADO!");
+            }else{
+                console.log("ALUNO REPROVADO");
+            }
+        }else{
+            console.log("Não foi possível concluir esta ação. O aluno não está matriculado em um curso.")
+        } 
+    }
+}
+
