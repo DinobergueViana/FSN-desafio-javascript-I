@@ -5,7 +5,7 @@ const alunosDaEscola=[{nome:"Henrique",notas:[],cursos:[],faltas:5},{nome:"Edson
 
 // adiciona um novo aluno após verificar o tipo da variável enviada como parâmetro;
 function adicionarAluno(nome){
-    if((typeof nome === 'string' && Number(nome).toString() == 'NaN') && !nome == ""){
+    if(typeof nome === 'string' && nome != ""){
         let aluno = {
             nome: nome,
             notas: [],
