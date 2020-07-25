@@ -94,20 +94,19 @@ function aplicarNota(aluno, nota){
 
 // verifica se um aluno pode ou não ser aprovado;
 function aprovarAluno(aluno){
-
+    let somaDasNotas = 0;
+    let media = 0;
     // soma todas as notas e retorna a média do aluno;
-    function calcularMedia(notas){
-        let somaDasNotas = 0;
-        somaDasNotas = notas.reduce(function(acumulador, nota){
+    function calcularMedia(){
+        somaDasNotas = aluno.notas.reduce(function(acumulador, nota){
             return acumulador + nota;
         })
-        return somaDasNotas / notas.length;
+        return somaDasNotas / aluno.notas.length;
     }
 
     if(aluno != undefined){
-        let media = 0;
         if(aluno.cursos.length > 0){
-            media = calcularMedia(aluno.notas);
+            media = calcularMedia();
 
             if(aluno.faltas < 4 && media >= 7){
                 console.log("ALUNO APROVADO!");
